@@ -4,7 +4,7 @@ console.log("This is my test CDN");
 // Function to create a loading message
 function createLoadingMessage() {
     const loadingMessage = document.createElement('div');
-    loadingMessage.innerHTML = "Loading...";
+    loadingMessage.innerHTML = "Loading, 1000ms delay applied...";
     loadingMessage.classList.add('animate-pulse', 'italic', 'text-gray-600', 'mb-2');
     return loadingMessage;
 }
@@ -42,7 +42,7 @@ async function injectContent() {
         setTimeout(() => {
             insertContentAfter(h2Element, content);
             loadingMessage.remove(); // Remove loading message
-        }, 500); // content loading delay in ms
+        }, 1000); // content loading delay in ms
     } else {
         loadingMessage.textContent = "Failed to load content."; // Handle error
     }
