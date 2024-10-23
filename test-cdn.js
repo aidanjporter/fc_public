@@ -4,8 +4,8 @@ console.log("This is my test CDN");
 // Function to create a loading message
 function createLoadingMessage() {
     const loadingMessage = document.createElement('div');
-    loadingMessage.innerHTML = "Loading, 1000ms delay applied...";
-    loadingMessage.classList.add('animate-pulse', 'italic', 'text-gray-600', 'mb-2');
+    loadingMessage.innerHTML = "Content injected here in 2000ms...";
+    loadingMessage.classList.add('animate-pulse', 'italic', 'text-indigo-800', 'font-semibold', 'my-4');
     return loadingMessage;
 }
 
@@ -30,7 +30,7 @@ function insertContentAfter(element, content) {
 
 // Main function to handle the content injection
 async function injectContent() {
-    const h2Element = document.querySelector("#inject-here h2");
+    const h2Element = document.querySelector("#inject-here");
 
     // Create and display the loading message
     const loadingMessage = createLoadingMessage();
@@ -42,7 +42,7 @@ async function injectContent() {
         setTimeout(() => {
             insertContentAfter(h2Element, content);
             loadingMessage.remove(); // Remove loading message
-        }, 1000); // content loading delay in ms
+        }, 2000); // content loading delay in ms
     } else {
         loadingMessage.textContent = "Failed to load content."; // Handle error
     }
